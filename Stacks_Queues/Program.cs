@@ -13,6 +13,8 @@ namespace Stacks_Queues
                 linkedList.Enqueue(70);
                 Console.WriteLine("Queue is Created"); //First-In-First-Out
                 linkedList.Display();
+                linkedList.Dequeue();
+                linkedList.Display();
             }
         }
     }

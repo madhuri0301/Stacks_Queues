@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Stacks_Queues
 {
-   class LinkedList
+    class LinkedList
     {
         Node head = null;
         internal void Enqueue(int data) // Method To Adding Elements To Queue
@@ -22,6 +22,18 @@ namespace Stacks_Queues
                 temp.next = node;
             }
             Console.WriteLine("{0} inserted into queue ", node.data);
+        }
+        public void Dequeue() // Method To Remove Element From Queue
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Queue is Empty");
+            }
+            else
+            {
+                Console.WriteLine(head.data + " removed from Queue");
+                head = head.next;
+            }
         }
         public void Display() // Method To Display Elements In Queue
         {
