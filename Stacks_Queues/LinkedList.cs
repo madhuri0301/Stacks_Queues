@@ -4,60 +4,41 @@ using System.Text;
 
 namespace Stacks_Queues
 {
-    class LinkedList
+   class LinkedList
     {
-        private Node top; //variable
-        public LinkedList()
+        Node head = null;
+        internal void Enqueue(int data) // Method To Adding Elements To Queue
         {
-            this.top = null;
-        }
-        internal void Push(int value) // method to push The Elements in stack
-        {
-            Node node = new Node(value);
-            if (this.top == null)
-                node.next = null;
+            Node node = new Node(data);
+            if (head == null)
+                head = node;
             else
-                node.next = this.top;
-                this.top = node;
-            Console.WriteLine("{0} pushed to stack ", value);
-        }
-        public void Peek() //Method To The Peek The Element
-        {
-            if (this.top == null)
             {
-                Console.WriteLine("Stack is empty");
-                return;
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
             }
-            Console.WriteLine("\n{0} is in the top of the stack ", this.top.data);
+            Console.WriteLine("{0} inserted into queue ", node.data);
         }
-
-        public void Pop() //Method To PopThe Element
+        public void Display() // Method To Display Elements In Queue
         {
-            if (this.top == null)
+            if (head == null)
             {
-                Console.WriteLine("Stack is empty!!!! Deletion is not possible");
-                return;
+                Console.WriteLine("Queue is Empty");
             }
-            Console.WriteLine("Value popped is {0} ", this.top.data);
-            this.top = this.top.next;
-        }
-        public void Display() //method use To Display
-        {
-            Node temp = this.top;
-            while (temp != null)
+            else
             {
-                Console.Write(temp.data + " ");
-                temp = temp.next;
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    Console.Write(temp.data + " ");
+                    temp = temp.next;
+                }
+                Console.Write(temp.data + "\n");
             }
-        }
-        internal void IsEmpty() //Checking Stack Is Empty
-        {
-            while (this.top != null)
-            {
-                Peek();
-                Pop();
-            }
-            Console.WriteLine("Stack is empty now.");
         }
 
     }

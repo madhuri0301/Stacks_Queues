@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Stacks_Queues
 {
-    class Node
+     class Node
     {
-
         public int data;
         public Node next;
         public Node(int data)
