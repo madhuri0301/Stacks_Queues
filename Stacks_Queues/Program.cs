@@ -6,7 +6,12 @@ namespace Stacks_Queues
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome To The Stacks And Queues Program");
+            LinkedList linkedList = new LinkedList();
+            linkedList.Push(70);
+            linkedList.Push(30);
+            linkedList.Push(56);
+            Console.WriteLine("Stack Created");
+            linkedList.Display();
         }
     }
 }
