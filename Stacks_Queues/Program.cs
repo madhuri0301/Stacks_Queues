@@ -12,6 +12,7 @@ namespace Stacks_Queues
             linkedList.Push(56);
             Console.WriteLine("Stack Created");
             linkedList.Display();
+            linkedList.IsEmpty();
         }
     }
 }
